@@ -4,6 +4,7 @@
 import logging
 import requests
 
+
 def convert_string(convert):
     if not convert:
         return ''
@@ -15,8 +16,7 @@ def convert_string(convert):
 class RoleStrategy(object):
     def __init__(self, url, login, password, ssl_verify=True, ssl_cert=None):
         if 'http' not in url:
-            raise exceptions.HTTP_HTTPSMissing(
-                'Missing http or https', dict(url=url))
+            raise PyjarsException('Missing http or https', 400, dict(url=url))
         if url[-1:] == '/':
             url = url[-1:]
         self._url = url + '/role-strategy/strategy'
@@ -29,6 +29,17 @@ class RoleStrategy(object):
         if crumb.status_code == 200:
             head = crumb.text.split(':')
             self._session.headers = {str(head[0]): str(head[1])}
+        if not is_connected():
+            raise PyjarsException('Authentification Failed', 401,
+                                  dict(
+                                      login=login,
+                                      password='****',
+                                      url=url,
+                                      ssl=self.ssl_verify,
+                                      cert=ssl_cert))
+
+    def is_connected(self):
+        return self._get(self._url + '/getAllRoles').status_code == 200
 
     def _connect(self, login, password, ssl_verify, ssl_cert, header=None):
         _s = requests.Session()
@@ -155,3 +166,10 @@ class Role:
             return query.json()[self.roleName]
         except KeyError:
             return []
+
+
+class PyjarsException(Exception):
+    def __init__(self, message, code, data):
+        self.error = dict(
+            message=message,
+            status_code=code, )

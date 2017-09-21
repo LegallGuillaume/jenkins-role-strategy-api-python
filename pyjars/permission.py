@@ -2,14 +2,10 @@
 """Permissions For Jenkins Roles"""
 
 __all__ = [
-    "JobPermission", 
-    "ViewPermission", 
-    "RunPermission", 
-    "AgentPermission", 
-    "ScmPermission", 
-    "CredentialPermission", 
-    "OverallPermission"
+    "JobPermission", "ViewPermission", "RunPermission", "AgentPermission",
+    "ScmPermission", "CredentialPermission", "OverallPermission"
 ]
+
 
 class PermissionModel:
     def __init__(self):
