@@ -1,9 +1,15 @@
-# jenkins-role-strategy-api-python
+# jenkins-role-strategy-api-python **Pyjars**
 API python from Jenkins Plugin - Role Strategy Plugin - https://github.com/jenkinsci/role-strategy-plugin
 
 ----------
 
 ## I. Introduction
+
+This API allow to manage Role from [Role Strategy Plugin](https://github.com/jenkinsci/role-strategy-plugin)
+
+> Author: Le Gall Guillaume <gulegall13@gmail.com>
+
+> Date: 09/2017 | Based: python3
 
 
 This API python allow to :
@@ -26,7 +32,7 @@ This API python allow to :
 
 Todo:
 
-- [x] setup.py **Most Important**
+- [x] <strike>setup.py **Most Important**</strike>
 
 - [ ] Get All User/Group from Role **(globalRoles, projectRoles, slaveRoles)**
 
