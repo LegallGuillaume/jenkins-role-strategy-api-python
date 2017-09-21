@@ -3,6 +3,15 @@
 
 from collections import OrderedDict
 
+__all__ = [
+    "JobPermission", 
+    "ViewPermission", 
+    "RunPermission", 
+    "AgentPermission", 
+    "ScmPermission", 
+    "CredentialPermission", 
+    "OverallPermission"
+]
 
 class PermissionModel:
     def __init__(self):

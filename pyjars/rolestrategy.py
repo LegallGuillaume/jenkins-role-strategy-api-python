@@ -3,8 +3,6 @@
 
 import logging
 import requests
-import src.permission as Permission
-
 
 def convert_string(convert):
     if not convert:
@@ -87,7 +85,7 @@ class Role:
                     set(self._permissions) - set([has_perm]))
             self._permissions.append(perm)
             ref_ret += [perm in self._permissions]
-        return set([True]) == set(ref_ret)
+        return all(ref_ret)
 
     def remove_permission(self, permissionModel):
         permission = permissionModel
@@ -100,7 +98,7 @@ class Role:
                 self._permissions = list(
                     set(self._permissions) - set([has_perm]))
             ref_ret += [perm not in self._permissions]
-        return set([True]) == set(ref_ret)
+        return all(ref_ret)
 
     def details_permission(self, permissionModel=None):
         if not permissionModel:
@@ -143,7 +141,7 @@ class Role:
         ref_ret = []
         for us_gr in self.list_sid():
             ref_ret += [self.unassign_sid(us_gr).status_code == 200]
-        return set([True]) == set(ref_ret)
+        return all(ref_ret)
 
     def list_sid(self):
         url = self._parent._url + '/getAllRoles'
