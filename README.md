@@ -2,7 +2,7 @@
 API python from Jenkins Plugin - Role Strategy Plugin - https://github.com/jenkinsci/role-strategy-plugin
 
 ## I. Introduction
-----------
+=====================
 
 This API python allow to :
 
@@ -24,19 +24,19 @@ This API python allow to :
 
 Todo:
 
-- setup.py **Most Important**
+- [ ] setup.py **Most Important**
 
-- Get All User/Group from Role **(globalRoles, projectRoles, slaveRoles)**
+- [ ] Get All User/Group from Role **(globalRoles, projectRoles, slaveRoles)**
 
-- Get Role **(know his permissions), Role Strategy Plugin to modify**
+- [ ] Get Role **(know his permissions), Role Strategy Plugin to modify**
 
-- *maybe your request*
+- [ ] *maybe your request*
 
 
 ----------
 
 ## II. Requirement
-----------
+=====================
 
 > Requests
 
@@ -46,7 +46,7 @@ Todo:
 ----------
 
 ## III. Installation
-----------
+=====================
 
 TODO
 
@@ -54,7 +54,7 @@ TODO
 ----------
 
 ## III. Python DEV
-----------
+
 
 ### a. Create function
 
@@ -62,7 +62,7 @@ TODO
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
@@ -90,7 +90,7 @@ else:
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
@@ -110,7 +110,7 @@ else:
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
@@ -130,7 +130,7 @@ else:
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
@@ -150,7 +150,7 @@ else:
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
@@ -170,7 +170,7 @@ else:
 
 ```python
 
-from pyjars import RoleStrategy, Permission, Role
+from rolestrategy import RoleStrategy, Permission, Role
 
 rs = RoleStrategy('https://127.0.0.1:8080', 'admin', 'azerty123', ssl_verify=True, ssl_cert=None)
 
