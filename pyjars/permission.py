@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Permissions For Jenkins Roles"""
 
-from collections import OrderedDict
-
 __all__ = [
     "JobPermission", 
     "ViewPermission", 
@@ -58,7 +56,7 @@ class PermissionModel:
 class JobPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.model.Item'
-        self.attributes = OrderedDict(
+        self.attributes = dict(
             Build=False,
             Cancel=False,
             Configure=False,
@@ -73,21 +71,21 @@ class JobPermission(PermissionModel):
 class ViewPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.model.View'
-        self.attributes = OrderedDict(
+        self.attributes = dict(
             Configure=False, Create=False, Delete=False, Read=False)
 
 
 class RunPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.model.Run'
-        self.attributes = OrderedDict(
+        self.attributes = dict(
             Artifacts=False, Delete=False, Replay=False, Update=False)
 
 
 class AgentPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.model.Computer'
-        self.attributes = OrderedDict(
+        self.attributes = dict(
             Create=False,
             Build=False,
             Configure=False,
@@ -100,13 +98,13 @@ class AgentPermission(PermissionModel):
 class ScmPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.scm.SCM'
-        self.attributes = OrderedDict(Tag=False)
+        self.attributes = dict(Tag=False)
 
 
 class CredentialPermission(PermissionModel):
     def __init__(self):
         self._base = 'com.cloudbees.plugins.credentials.CredentialsProvider'
-        self.attributes = OrderedDict(
+        self.attributes = dict(
             Create=False,
             Delete=False,
             ManageDomains=False,
@@ -117,4 +115,4 @@ class CredentialPermission(PermissionModel):
 class OverallPermission(PermissionModel):
     def __init__(self):
         self._base = 'hudson.model.Hudson'
-        self.attributes = OrderedDict(Administer=False, Read=False)
+        self.attributes = dict(Administer=False, Read=False)

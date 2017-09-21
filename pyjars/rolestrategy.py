@@ -24,8 +24,11 @@ class RoleStrategy(object):
         crumb = self._get(
             url +
             '/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
-        ).text.split(':')
-        self._session.headers = {str(crumb[0]): str(crumb[1])}
+        )
+        #if there are no crumb we don't need this below
+        if crumb.status_code == 200:
+            head = crumb.text.split(':')
+            self._session.headers = {str(head[0]): str(head[1])}
 
     def _connect(self, login, password, ssl_verify, ssl_cert, header=None):
         _s = requests.Session()
