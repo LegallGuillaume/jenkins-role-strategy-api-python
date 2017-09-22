@@ -27,15 +27,13 @@ This API python allow to :
 
 - Unassign User/Group from All Roles
 
-- Get All User/Group from Role *Only globalRoles for the moment*
+- Get All User/Group from Role
 
 - Custom permission easy to make
 
 Todo:
 
 - [x] <strike>setup.py **Most Important**</strike>
-
-- [ ] Get All User/Group from Role **(globalRoles, projectRoles, slaveRoles)**
 
 - [ ] Get Role **(know his permissions), Role Strategy Plugin to modify**
 

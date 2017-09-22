@@ -7,7 +7,7 @@
 
 
 ```python
-from pyjars import Role
+from pyjars import RoleStrategy
 ```
 
 
