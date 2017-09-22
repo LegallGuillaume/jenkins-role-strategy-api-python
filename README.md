@@ -1,13 +1,14 @@
 # jenkins-role-strategy-api-python **Pyjars**
 API python from Jenkins Plugin - Role Strategy Plugin - https://github.com/jenkinsci/role-strategy-plugin
 
+## /!\ This API version is BETA /!\
 ----------
 
 ## I. Introduction
 
 This API allow to manage Role from [Role Strategy Plugin](https://github.com/jenkinsci/role-strategy-plugin)
 
-> Author: Le Gall Guillaume <gulegall13@gmail.com>
+> Author: Le Gall Guillaume \<glegall13@gmail.com\>
 
 > Date: 09/2017 | Based: python3
 

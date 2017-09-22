@@ -172,4 +172,5 @@ class PyjarsException(Exception):
     def __init__(self, message, code, data):
         self.error = dict(
             message=message,
-            status_code=code, )
+            status_code=code,
+            data=data, )
