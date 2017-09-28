@@ -29,7 +29,7 @@ class RoleStrategy(object):
         if crumb.status_code == 200:
             head = crumb.text.split(':')
             self._session.headers = {str(head[0]): str(head[1])}
-        if not is_connected():
+        if not self.is_connected():
             raise PyjarsException('Authentification Failed', 401,
                                   dict(
                                       login=login,
