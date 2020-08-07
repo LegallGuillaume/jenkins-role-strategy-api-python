@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = __import__('pyjars').__version__
+version = '0.0.1'
 
 setup(
     name='pyjars',
