@@ -35,7 +35,7 @@ class RoleStrategy(object):
                                       login=login,
                                       password='****',
                                       url=url,
-                                      ssl=self.ssl_verify,
+                                      ssl=ssl_verify,
                                       cert=ssl_cert))
 
     def is_connected(self):
