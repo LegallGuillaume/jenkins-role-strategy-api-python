@@ -55,7 +55,7 @@ class RoleStrategy(object):
 
     def _get(self, api_url, data=None):
         """Return requests.models.Response"""
-        return self._session.get(api_url, data=data)
+        return self._session.get(api_url, params=data)
 
     def _delete(self, api_url):
         """Return requests.models.Response"""
